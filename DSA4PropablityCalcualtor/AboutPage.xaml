@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="DSA4PropablityCalcualtor.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DSA4PropablityCalcualtor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock TextWrapping="Wrap" Text="DSA 4 Wahrscheinlichkeitsrechner" HorizontalAlignment="Center" FontSize="35" Margin="20"/>
+        <RichTextBlock FontSize="25" Margin="10">
+            <Paragraph >
+                Mit dieser App kann man für das Rollenspiel DSA 4 oder 4.1 sehen für welchen Talentwert es wie Wahrscheinlich ist, dass man die Probeschafft.
+            </Paragraph>
+            <Paragraph>
+                Natürlich funktinert die auch für Zauber, dann ist der TaW eben der ZfP.
+            </Paragraph>
+            <Paragraph>
+                Die angegebenen TaW sind die effektiven Taw die man hat wenn man evtuelle Erleichterungen oder Mali schon eigerechnet hat.
+            </Paragraph>
+            <Paragraph>
+                Die Eigenschaften kann man jeh nach dem um was für eine Talent/Held es sich handelt anpassen.
+                Die Wahrscheinlichkeiten werden dabei neu berechnet, wenn man das Textfeld verlässt.
+            </Paragraph>            
+        </RichTextBlock>
+    </StackPanel>
+</Page>
