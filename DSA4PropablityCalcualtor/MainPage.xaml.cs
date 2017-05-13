@@ -13,14 +13,11 @@ namespace DSA4PropablityCalcualtor
         public MainPage()
         {
             this.InitializeComponent();
-            this.DataContextChanged += (s, e) => { ViewModel = DataContext as MainPageViewModel; };
         }
 
         private void AboutButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(AboutPage));
-        }
-
-        public MainPageViewModel ViewModel { get; set; }
+        }       
     }
 }

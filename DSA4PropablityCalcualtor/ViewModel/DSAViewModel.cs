@@ -1,9 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
+using DSA4PropablityCalcualtor.Model;
 
-namespace DSA4PropablityCalcualtor
+namespace DSA4PropablityCalcualtor.ViewModel
 {
-    public class MainPageViewModel
+    public class DSAViewModel
     {
         private int _eigenschaft1 = 12;
         private int _eigenschaft2 = 12;
@@ -42,7 +43,7 @@ namespace DSA4PropablityCalcualtor
 
         public ObservableCollection<TalentPropablityModel> OutputList { get; set; } = new ObservableCollection<TalentPropablityModel>();
 
-        public MainPageViewModel()
+        public DSAViewModel()
         {
             CalcualteDicePropability();
         }
