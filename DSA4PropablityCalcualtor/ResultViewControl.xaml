@@ -1,0 +1,65 @@
+﻿<UserControl
+    x:Class="DSA4PropablityCalcualtor.ResultViewControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DSA4PropablityCalcualtor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:vm="using:DSA4PropablityCalcualtor.ViewModel"
+    xmlns:m="using:DSA4PropablityCalcualtor.Model"    
+    xmlns:converter="using:DSA4PropablityCalcualtor.Converter"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <converter:StringFormatConverter x:Key="stringFormatConverter"/>
+    </UserControl.Resources>
+    <ListView Margin="10" ItemsSource="{x:Bind OutputList}" SelectionMode="None" IsItemClickEnabled="False" ScrollViewer.HorizontalScrollBarVisibility="Auto" 
+                  VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch">
+
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <Grid BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition x:Name="Taw" Width="44"/>
+                        <ColumnDefinition x:Name="Propablity" Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel  Grid.Column="0" BorderThickness="0,0,1,0" BorderBrush="Black" Padding="5">
+                        <TextBlock Text="Taw" Margin="0,0,5,0" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1"  Padding="5">
+                        <TextBlock Text="Wahscheinlichkeit" FontWeight="Bold" Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+
+        <ListView.ItemContainerStyle>
+            <Style TargetType="ListViewItem">
+                <Setter Property="Padding" Value="0"/>
+                <Setter Property="Margin" Value="0,-10"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            </Style>
+        </ListView.ItemContainerStyle>
+
+        <ListView.ItemTemplate >
+            <DataTemplate x:DataType="m:TalentPropablityModel" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="44"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel  Grid.Column="0" BorderThickness="0,0,1,0" BorderBrush="Black" Padding="5">
+                        <TextBlock Text="{x:Bind TaW}" Margin="0,0,5,0"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1"  Padding="5">
+                        <TextBlock Text="{x:Bind Propability, Converter={StaticResource stringFormatConverter}, ConverterParameter=\{0:P2\}}"
+                                        Margin="5,0,0,0"/>
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</UserControl>

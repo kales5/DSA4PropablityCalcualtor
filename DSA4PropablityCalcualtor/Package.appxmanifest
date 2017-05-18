@@ -15,11 +15,12 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="DSA4PropablityCalcualtor.App">
-      <uap:VisualElements DisplayName="DSA 4 Wahrscheinlichkeitsrechner" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Mit dieser App kann man für das Rollenspiel DSA 4 oder 4.1 sehen für welchen Talentwert es wie Wahrscheinlich ist, dass man die Probeschafft." BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
+      <uap:VisualElements DisplayName="DSA 4 Wahrscheinlichkeitsrechner" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Mit dieser App kann man für das Rollenspiel DSA 4 oder 4.1 sehen für welchen Talentwert es wie Wahrscheinlich ist, dass man die Probeschafft." BackgroundColor="#FFB900">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="DSA Calc">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
         <uap:InitialRotationPreference>
+          <uap:Rotation Preference="portrait" />
           <uap:Rotation Preference="landscape" />
         </uap:InitialRotationPreference>
       </uap:VisualElements>

@@ -2,16 +2,17 @@
 using System.Collections.ObjectModel;
 using System.Linq;
 using DSA4PropablityCalcualtor.Model;
+using System.Collections.Generic;
 
 namespace DSA4PropablityCalcualtor.ViewModel
 {
-    class SplittermondViewModel
+    public class SplittermondViewModel
     {
         private int _eigenschaft1 = 2;
         private int _eigenschaft2 = 2;
 
         private int _difficulty = 20;
-        private SplitterMondRollType _rollType;
+        private SplitterMondRollType _rollType = SplitterMondRollType.Normal;
 
         public int Eigentschaft1
         {
@@ -22,6 +23,8 @@ namespace DSA4PropablityCalcualtor.ViewModel
                 CalcualteDicePropability();
             }
         }       
+
+        public IEnumerable<SplitterMondRollType> RollTypes => Enum.GetValues(typeof(SplitterMondRollType)).Cast<SplitterMondRollType>();
 
         public int Eigentschaft2
         {
@@ -75,19 +78,20 @@ namespace DSA4PropablityCalcualtor.ViewModel
 
         public decimal CountOfValidScores(int taw)
         {
+            var effectiveTaw = taw + Eigentschaft1 + Eigentschaft2;
             switch (_rollType)
             {
                 case SplitterMondRollType.Normal:
                     {
-                        return CountOfValidScoresRoll(taw, CombinationIsValidNormalRoll) / 100m;
+                        return CountOfValidScoresRoll(effectiveTaw, CombinationIsValidNormalRoll) / 100m;
                     }
                 case SplitterMondRollType.Risk:
                     {
-                        return CountOfValidScoresRiskRoll(taw) / 10000m;
+                        return CountOfValidScoresRiskRoll(effectiveTaw) / 10000m;
                     }
                 case SplitterMondRollType.Cautious:
                     {
-                        return CountOfValidScoresRoll(taw, CombinationIsValidCautiousRoll) / 100m;
+                        return CountOfValidScoresRoll(effectiveTaw, CombinationIsValidCautiousRoll) / 100m;
                     }
                 default:
                     {

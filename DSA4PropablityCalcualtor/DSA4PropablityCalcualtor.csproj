@@ -102,6 +102,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Converter\SplitterMondRollTypeConverter.cs" />
     <Compile Include="Converter\StringFormatConverter.cs" />
     <Compile Include="DSAControl.xaml.cs">
       <DependentUpon>DSAControl.xaml</DependentUpon>
@@ -110,6 +111,12 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\SplitterMondRollType.cs" />
+    <Compile Include="ResultViewControl.xaml.cs">
+      <DependentUpon>ResultViewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SplitermondControl.xaml.cs">
+      <DependentUpon>SplitermondControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\DSAViewModel.cs" />
     <Compile Include="Model\TalentPropablityModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +154,14 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ResultViewControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SplitermondControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
