@@ -1,20 +1,25 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using DSA4PropablityCalcualtor.Model;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace DSA4PropablityCalcualtor.ViewModel
 {
-    public class DSAViewModel
+    public class DSAViewModel : INotifyPropertyChanged
     {
-        private int _eigenschaft1 = 12;
-        private int _eigenschaft2 = 12;
-        private int _eigenschaft3 = 12;
+        private int _eigenschaft1;
+        private int _eigenschaft2;
+        private int _eigenschaft3;
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public int Eigentschaft1 {
             get { return _eigenschaft1; }
             set
             {
                 _eigenschaft1 = value;
+                NotifyPropertyChanged();
                 CalcualteDicePropability();
             }
         }
@@ -25,6 +30,7 @@ namespace DSA4PropablityCalcualtor.ViewModel
             set
             {
                 _eigenschaft2 = value;
+                NotifyPropertyChanged();
                 CalcualteDicePropability();
             }
         }
@@ -35,6 +41,7 @@ namespace DSA4PropablityCalcualtor.ViewModel
             set
             {
                 _eigenschaft3 = value;
+                NotifyPropertyChanged();
                 CalcualteDicePropability();
             }
         }
@@ -45,6 +52,17 @@ namespace DSA4PropablityCalcualtor.ViewModel
 
         public DSAViewModel()
         {
+            _eigenschaft1 = 12;
+            _eigenschaft2 = 12;
+            _eigenschaft3 = 12;
+            CalcualteDicePropability();
+        }
+
+        public DSAViewModel(int e1, int e2, int e3)
+        {
+            _eigenschaft1 = e1;
+            _eigenschaft2 = e2;
+            _eigenschaft3 = e3;
             CalcualteDicePropability();
         }
 
@@ -97,6 +115,14 @@ namespace DSA4PropablityCalcualtor.ViewModel
 
             return taw >= 0;
 
+        }
+
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
     }

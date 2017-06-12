@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="de-de" Name="AdventureWorksCommandSet_de-de">
+    <AppName>Würfel Wahrscheinlichkeit</AppName>
+    <Example>Berechne DSA Wahrscheinlichkeit mit Talent 6 mit Eigenschaften 12, 14, 13 </Example>
+
+    <Command Name="calculatePropablityDSA">
+      <Example> Berechne Würfel Wahrscheinlichkeit mit Talentwert 6 und Eigenschaften 12 und 14 und 13 </Example>
+     <ListenFor RequireAppName="ExplicitlySpecified"> Berechne {builtin:AppName} mit Talentwert {taw} und Eigenschaften {eigenschaft1} und {eigenschaft2} und {eigenschaft3}</ListenFor>
+      <Feedback> Berechne Wahrscheinlichkeit </Feedback>
+      <VoiceCommandService Target="VoiceCommandsService"/>
+    </Command>
+
+    <Command Name="openHeroDSA">
+      <Example> Öffne DSA mit Eigenschaften 12, 14, 13 </Example>
+      <ListenFor RequireAppName="ExplicitlySpecified"> Öffne {builtin:AppName} mit Eigenschaften {eigenschaft1}  und {eigenschaft2} und {eigenschaft3}</ListenFor>
+      <Feedback> Öffne Held </Feedback>
+      <Navigate />
+    </Command>
+    <Command Name="open">
+      <Example> Öffne DSA </Example>
+      <ListenFor RequireAppName="ExplicitlySpecified"> Öffne {builtin:AppName}</ListenFor>
+      <Feedback> Öffne Software </Feedback>
+      <Navigate />
+    </Command>
+
+   
+    
+    <PhraseTopic Label="eigenschaft1" Scenario="Commands">
+      <Subject>Phone Number</Subject>
+    </PhraseTopic>
+    <PhraseTopic Label="eigenschaft2" Scenario="Commands">
+      <Subject>Phone Number</Subject>
+    </PhraseTopic>
+    <PhraseTopic Label="eigenschaft3" Scenario="Commands">
+      <Subject>Phone Number</Subject>
+    </PhraseTopic>
+    <PhraseTopic Label="taw" Scenario="Commands">
+      <Subject>Phone Number</Subject>
+    </PhraseTopic>
+  </CommandSet>  
+    
+  </VoiceCommands>

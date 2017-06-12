@@ -1,2 +1,2 @@
-MainPackage=D:\codeprojects\UWPs\DSA4PropablityCalcualtor\DSA4PropablityCalcualtor\bin\x64\Release\DSA4PropablityCalcualtor_1.0.1.0_x64.appx
-SymbolPackage=D:\codeprojects\UWPs\DSA4PropablityCalcualtor\DSA4PropablityCalcualtor\AppPackages\DSA4PropablityCalcualtor_1.0.1.0_Test\DSA4PropablityCalcualtor_1.0.1.0_x64.appxsym
+MainPackage=D:\codeprojects\UWPs\DSA4PropablityCalcualtor\DSA4PropablityCalcualtor\bin\x64\Release\DSA4PropablityCalcualtor_1.1.0.0_x64.appx
+SymbolPackage=D:\codeprojects\UWPs\DSA4PropablityCalcualtor\DSA4PropablityCalcualtor\AppPackages\DSA4PropablityCalcualtor_1.1.0.0_Test\DSA4PropablityCalcualtor_1.1.0.0_x64.appxsym

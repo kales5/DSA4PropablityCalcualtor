@@ -14,12 +14,12 @@
         </CommandBar>
     </Page.BottomAppBar>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Pivot >
-            <PivotItem Header="DSA">
-                <local:DSAControl/>
+        <Pivot x:Name="Pivot" >
+            <PivotItem Header="DSA" x:Name="DSA">
+                <local:DSAControl x:Name="DSAControl"/>
             </PivotItem>
-            <PivotItem Header="Splittermond">
-                <local:SplitermondControl/>
+            <PivotItem Header="Splittermond" x:Name="Splittermond">
+                <local:SplitermondControl x:Name="SplitermondControl"/>
             </PivotItem>
         </Pivot>
         
